@@ -1,5 +1,5 @@
 
-import { Bell, PieChart, Target, TrendingUp, Zap, Lock as LockIcon } from "lucide-react";
+import { Bell, PieChart, Target, TrendingUp, Zap, Lock as LockIcon, EyeOff, Server, Key, Lock } from "lucide-react";
 import { FaChartPie, FaRocket, FaUserPlus } from "react-icons/fa";
 import {  Crown, Building2 } from "lucide-react";
 import {  Users, Globe, Landmark } from "lucide-react";
@@ -139,4 +139,28 @@ export const plans = [
     { label: "Transactions", value: "$2M+", icon: <TrendingUp size={28} />, delay: 0.3 },
     { label: "Countries", value: "50+", icon: <Globe size={28} />, delay: 0.4 },
     { label: "Partner Banks", value: "100+", icon: <Landmark size={28} />, delay: 0.5 },
+];
+
+
+export const securityFeatures = [
+    {
+        title: "Bank-Grade Encryption",
+        description: "All financial data is encrypted using AES-256 bit protocols, the global standard for banking institutions.",
+        icon: <Lock className="text-orange-600" />,
+    },
+    {
+        title: "Zero-Knowledge Privacy",
+        description: "We never sell your data. Your financial records are private, ensuring you remain in total control.",
+        icon: <EyeOff className="text-emerald-500" />,
+    },
+    {
+        title: "Hardened Infrastructure",
+        description: "Hosted in SOC2 Type II compliant data centers with 24/7 monitoring and physical security layers.",
+        icon: <Server className="text-blue-500" />,
+    },
+    {
+        title: "Multi-Factor Auth",
+        description: "Secure your account with 2FA, adding an essential layer of protection beyond just a password.",
+        icon: <Key className="text-amber-500" />,
+    }
 ];

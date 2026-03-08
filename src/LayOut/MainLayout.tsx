@@ -7,7 +7,7 @@ const MainLayout = () => {
     return (
         <div className='bg-black/5'>
 
-            <header>
+            <header className='sticky top-0 z-50'>
                <Navbar/>
             </header>
             <main >

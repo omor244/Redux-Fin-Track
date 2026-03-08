@@ -1,8 +1,8 @@
-import  { useState } from 'react';
+
 import { Link, useLocation, useNavigate } from 'react-router';
 import {
-    Menu, LogOut, BarChart3, Settings, ShieldCheck,
-    ChevronDown, CreditCard, LayoutDashboard
+    Menu, LogOut,  Settings, 
+    LayoutDashboard
 } from 'lucide-react';
 
 import Swal from 'sweetalert2';
@@ -20,7 +20,7 @@ import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import Logo from '../Logo/Logo';
-import { useGetTaskQuery} from '../../Redux/Api/Trip';
+
 
 
 const navLinks: NavItem[] = [
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <nav className=" w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center justify-between px-4 md:px-8 lg:px-24">
 
                
