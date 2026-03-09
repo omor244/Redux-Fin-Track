@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+
 import Features from '../components/features/Features';
 
 const FeaturesPage = () => {

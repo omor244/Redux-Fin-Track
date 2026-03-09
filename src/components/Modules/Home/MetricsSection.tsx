@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Users, Globe, Landmark, TrendingUp, CheckCircle2 } from "lucide-react";
+import { ShieldCheck,  CheckCircle2 } from "lucide-react";
 import { stats } from "../data/features";
 
 

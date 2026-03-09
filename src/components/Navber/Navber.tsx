@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
             text: "Are you sure you want to end your session?",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "oklch(89.33% 0.1719 115.83)", // Your Lime Green
+            confirmButtonColor: "oklch(89.33% 0.1719 115.83)", 
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, Logout",
             customClass: {
@@ -60,14 +60,14 @@ const Navbar: React.FC = () => {
         });
 
         if (result.isConfirmed) {
-            // dispatch(logoutUser());
+            
             navigate('/login');
         }
     };
 
     return (
-        <nav className=" w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between px-4 md:px-8 lg:px-24">
+        <nav className="  mx-auto px-26 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex pl-8 h-18 items-center justify-between ">
 
                
                 <div className="flex items-center gap-2">

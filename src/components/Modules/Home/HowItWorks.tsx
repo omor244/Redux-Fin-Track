@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
-import { Link } from "react-router"; // or react-router-dom
+import { Link } from "react-router"; 
 import {  FaRocket, FaChevronRight } from "react-icons/fa";
 import { steps } from '../data/features';
 

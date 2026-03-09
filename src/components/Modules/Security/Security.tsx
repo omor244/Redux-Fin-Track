@@ -1,4 +1,4 @@
-import { ShieldCheck, Lock, EyeOff, Server, Key, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion"; // Import framer-motion
@@ -89,7 +89,7 @@ const SecurityPage = () => {
                                 className="flex flex-col sm:flex-row gap-8 p-10 rounded-[2.5rem] border border-slate-100 bg-white hover:border-orange-100 hover:shadow-2xl hover:shadow-orange-600/5 transition-colors duration-300"
                             >
                                 <div className="w-16 h-16 bg-slate-50 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                    {React.cloneElement(feature.icon as React.ReactElement, { size: 32 })}
+                                    {React.cloneElement(feature.icon as React.ReactElement)}
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-black text-slate-800 mb-4">{feature.title}</h3>

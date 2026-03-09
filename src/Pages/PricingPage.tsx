@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ManualPayment from '../components/ManualPayment/ManualPayment';
 
 const PricingPage = () => {

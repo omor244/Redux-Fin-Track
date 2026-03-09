@@ -5,7 +5,7 @@ import {
     PieChart,
     Bell,
     Zap,
-    Smartphone,
+   
     ArrowUpRight
 } from "lucide-react";
 

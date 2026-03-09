@@ -1,8 +1,8 @@
 
 import {  FaWallet, FaChartLine } from "react-icons/fa";
 import { Link } from 'react-router';
-import { Button } from "@/components/ui/button"; // shadcn
-import { Badge } from "@/components/ui/badge";   // shadcn
+import { Button } from "@/components/ui/button"; 
+
 
 const Hero = () => {
     

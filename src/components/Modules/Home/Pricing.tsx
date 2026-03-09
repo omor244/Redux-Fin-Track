@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { Check, X, Crown, Building2, Zap, ArrowRight } from "lucide-react";
+import { Check, X,  ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { plans } from "../data/features";
 
 
 const Pricing = () => {
     
-    const user = null; 
+    // const user = {
+    //     name: "omor",
+    //     email: ""
+    // }
 
    
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useGetTaskQuery } from '../../../Redux/Api/Trip';

@@ -12,6 +12,10 @@ import {
 import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import { useAddPaymentMutation } from '../../Redux/Api/PaymentsApi';
+import type { InputGroupProps, PaymentTabProps, SummaryRowProps } from '@/Type/Type';
+
+
+
 
 const ManualPayment = () => {
     const navigate = useNavigate();
@@ -43,7 +47,7 @@ const ManualPayment = () => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
-    const [addPayment, { isLoading }] = useAddPaymentMutation();
+    const [addPayment] = useAddPaymentMutation();
 
     
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -76,7 +80,7 @@ const ManualPayment = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Submission Failed',
-                text: error?.data?.message || 'Something went wrong. Please try again.',
+                text: (error as any)?.data?.message || 'Something went wrong'
             });
         }
     };
@@ -93,7 +97,7 @@ const ManualPayment = () => {
                     Back to Dashboard
                 </button>
                 <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-600/20">
+                    <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-black shadow-lg shadow-orange-600/20">
                         <CreditCard size={24} />
                     </div>
                     <div>
@@ -198,21 +202,21 @@ const ManualPayment = () => {
                     <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white sticky top-10 shadow-2xl shadow-slate-900/40 border border-white/5 overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-orange-600/20 blur-[50px] -mr-16 -mt-16 rounded-full"></div>
 
-                        <h3 className="text-xl font-black mb-8 relative z-10">Order Summary</h3>
+                        <h3 className="text-xl font-black mb-8 relative z-10"> Summary</h3>
 
                         <div className="space-y-5 relative z-10">
                             <SummaryRow label="Subtotal" value="$1,299.00" />
                             <SummaryRow label="Platform Fee" value="$5.00" />
                             <div className="h-px bg-white/10 my-2"></div>
-                            <div className="flex justify-between items-end">
+                            {/* <div className="flex justify-between items-end">
                                 <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Total Amount</span>
                                 <span className="text-4xl font-black text-orange-500 tracking-tighter">$1,304.00</span>
-                            </div>
+                            </div> */}
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full mt-10 bg-orange-600 hover:bg-orange-500 text-white font-black py-5 rounded-2xl shadow-xl shadow-orange-600/30 transition-all active:scale-95 flex items-center justify-center gap-3 group uppercase tracking-widest text-xs"
+                            className="w-full mt-10 bg-primary hover:bg-orange-500 text-black font-black py-5 rounded-2xl shadow-xl shadow-orange-600/30 transition-all active:scale-95 flex items-center justify-center gap-3 group uppercase tracking-widest text-xs"
                         >
                             Confirm Payment
                             <Lock size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -245,7 +249,7 @@ const ManualPayment = () => {
 
 // --- Helper Components for Clean Code ---
 
-const PaymentTab = ({ active, onClick, icon, title, subtitle }) => (
+const PaymentTab = ({ active, onClick, icon, title, subtitle }: PaymentTabProps) => (
     <button
         type="button"
         onClick={onClick}
@@ -254,7 +258,7 @@ const PaymentTab = ({ active, onClick, icon, title, subtitle }) => (
                 : 'border-slate-50 bg-slate-50/50 hover:border-slate-200'
             }`}
     >
-        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${active ? 'bg-orange-600 text-white' : 'bg-white text-slate-400 shadow-sm'}`}>
+        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors ${active ? 'bg-primary text-black' : 'bg-white text-slate-400 shadow-sm'}`}>
             {icon}
         </div>
         <div>
@@ -264,7 +268,7 @@ const PaymentTab = ({ active, onClick, icon, title, subtitle }) => (
     </button>
 );
 
-const InputGroup = ({ label, ...props }) => (
+const InputGroup = ({ label, ...props }: InputGroupProps ) => (
     <div className="w-full">
         <label className="text-[10px] font-black uppercase text-slate-400 ml-4 mb-2 block tracking-widest">{label}</label>
         <input
@@ -275,7 +279,7 @@ const InputGroup = ({ label, ...props }) => (
     </div>
 );
 
-const SummaryRow = ({ label, value }) => (
+const SummaryRow = ({ label, value }: SummaryRowProps) => (
     <div className="flex justify-between items-center">
         <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">{label}</span>
         <span className="font-black text-sm">{value}</span>
